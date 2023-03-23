@@ -1,0 +1,42 @@
+.cardLayoutMain {
+  position: relative;
+  background-color: #fff;
+  cursor: pointer;
+  &.Style-1 {
+    -webkit-background-color: var(--primaryButtonColor);
+    border-radius: 9px;
+    box-shadow: -1px 0px 17px 0px rgb(0 0 0 / 15%);
+    width: 100%;
+    min-height: 100px;
+    transform: skewX(0.001deg);
+    transition: transform 0.35s ease-in-out;
+    // &:hover {
+    //   transform: rotateX(7deg) translateY(-6px);
+    // }
+  }
+  &.Style-2 {
+    border-radius: 0px;
+    box-shadow: -1px 0px 17px 0px rgb(0 0 0 / 15%);
+    -webkit-box-shadow: -1px 0px 17px 0px rgb(0 0 0 / 15%);
+    width: 100%;
+    border: 1px solid #ddd;
+    min-height: 100px;
+    transform: skewX(0.001deg);
+    transition: transform 0.35s ease-in-out;
+    // &:hover {
+    //   transform: rotateX(7deg) translateY(-6px);
+    // }
+  }
+  &.Style-3 {
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: -1px 4px 10px rgb(0 0 0 / 20%);
+    -webkit-box-shadow: -1px 4px 10px rgb(0 0 0 / 20%);
+    max-width: 100%;
+    min-height: 100px;
+    // &:hover {
+    //   border: 1px solid rgb(0 0 0 / 20%);
+    // }
+  }
+}

@@ -1,0 +1,252 @@
+@import "../../assets/scss/breakpoints.scss";
+@import "../../assets/scss/mixin.scss";
+
+.loginContainer {
+  @mixin card {
+    padding: 2.5em;
+    background: var(--loginCardBackground);
+    @include flex-center;
+    background: var(--loginCardBackground);
+    box-shadow: 0px 0px 5px 3px rgb(0 0 0 / 5%);
+  }
+
+  height: 100vh;
+  position: relative;
+  flex-direction: column;
+  @include flex-center;
+
+  &.Image {
+    background: var(--loginBGImage) no-repeat fixed center/cover;
+  }
+
+  &.Color {
+    background: var(--loginBGColor);
+  }
+
+  .logoTitle {
+    color: #fff;
+
+    p {
+      -webkit-text-stroke: 1px #f8f8f8;
+      text-shadow: 0px 1px 4px #23430c;
+      color: #4a7e4e;
+      font-size: 1.5em;
+    }
+  }
+
+  .loginFooter {
+    color: #ffff;
+    position: absolute;
+    bottom: 3.5em;
+    white-space: nowrap;
+
+    .loginFotterWrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p {
+        font-size: 0.85em;
+      }
+
+      span {
+        padding: 0 0.6em;
+      }
+
+      img {
+        width: 120px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  // &.Style-1 {
+    .logoTitle {
+      display: none;
+    }
+
+    .loginCard {
+      width: 35%;
+      height: 100%;
+      position: absolute;
+      border-radius: 0px;
+      @include card;
+    }
+
+    .loginFooter {
+      display: none;
+    }
+
+    @media screen and (max-width: $tabletViewWidth) {
+      .loginCard {
+        width: 80%;
+        height: auto;
+        position: initial;
+        overflow-y: auto;
+      }
+    }
+
+    @media screen and (min-width: $xlLargeViewWidth) {
+      .loginCard {
+        height: auto;
+        position: initial;
+        overflow-y: auto;
+      }
+    }
+  // }
+
+  &.Style-2 {
+    .logoTitle {
+      position: absolute;
+      width: 65%;
+      left: 0;
+      text-align: center;
+      z-index: 9;
+    }
+
+    .loginCard {
+      width: 35%;
+      height: 100%;
+      left: 65%;
+      position: absolute;
+      border-radius: 0px;
+      @include card;
+    }
+
+    .loginFooter {
+      color: white;
+      position: absolute;
+      bottom: 2.5em;
+      white-space: nowrap;
+      width: 65%;
+      left: 0;
+      z-index: 9999;
+      text-align: center;
+      right: 0;
+    }
+
+    @media screen and (max-width: $tabletViewWidth) {
+      .logoTitle {
+        display: none;
+      }
+      .loginCard {
+        width: 80%;
+        height: auto;
+        position: initial;
+        overflow-y: auto;
+      }
+
+      .loginFooter {
+        display: none;
+      }
+    }
+  }
+
+  &.Style-3 {
+    .logoTitle {
+      position: absolute;
+      width: 65%;
+      right: 0;
+      text-align: center;
+      z-index: 9;
+    }
+
+    .loginCard {
+      width: 35%;
+      height: 100%;
+      right: 65%;
+      position: absolute;
+      border-radius: 0px 250px 0;
+      @include card;
+    }
+
+    .loginFooter {
+      color: white;
+      position: absolute;
+      bottom: 2.5em;
+      white-space: nowrap;
+      width: 65%;
+      z-index: 9999;
+      text-align: center;
+      right: 0;
+    }
+
+    @media screen and (max-width: $tabletViewWidth) {
+      .logoTitle {
+        display: none;
+      }
+      .loginCard {
+        width: 80%;
+        height: auto;
+        position: initial;
+        overflow-y: auto;
+        border-radius: 0px 150px 0;
+      }
+
+      .loginFooter {
+        display: none;
+      }
+    }
+  }
+
+  // &.Style-4 {
+  //   &::before {
+  //     content: "";
+  //     background: #e8f0fe;
+  //     height: 100%;
+  //     position: absolute;
+  //     width: 40%;
+  //     left: 0%;
+  //   }
+
+  //   .loginCard {
+  //     width: 34%;
+  //     max-width: 434px;
+  //     height: auto;
+  //     position: absolute;
+  //     padding: 3.5em 3em;
+  //     border-radius: 9px;
+  //     z-index: 9999;
+  //     transform: translate(-59%, 0%);
+  //     @include card;
+  //   }
+
+  //   .logoTitle {
+  //     z-index: 999;
+  //     color: #fff;
+  //     position: absolute;
+  //     font-size: 2.5em;
+  //     overflow: hidden;
+  //     left: 32.5%;
+  //     overflow: hidden;
+  //     left: 68.5%;
+  //     transform: translate(-50%, 50%);
+
+  //     p {
+  //       -webkit-text-stroke: 1px #f8f8f8;
+  //       text-shadow: 0px 1px 4px #23430c;
+  //       color: #4a7e4e;
+  //       white-space: nowrap;
+  //     }
+  //   }
+
+  //   @media screen and (max-width: $tabletViewWidth) {
+  //     &::before {
+  //       display: none;
+  //     }
+
+  //     .loginCard {
+  //       @include card;
+  //       transform: none;
+  //     }
+
+  //     .loginFooter {
+  //       left: inherit;
+  //       transform: none;
+  //     }
+
+  //     .logoTitle {
+  //       display: none;
+  //     }
+  //   }
+  // }
+}

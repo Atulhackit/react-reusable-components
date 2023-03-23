@@ -1,0 +1,30 @@
+@import "../../assets/scss/breakpoints.scss";
+.baseLayoutContainer {
+  display: grid;
+  background: transparent;
+    overflow: hidden;
+  &.full{
+    grid-template-rows: 65px calc(100vh - 105px) 40px;
+  }
+  &.onlyHeader{
+    grid-template-rows: 65px calc(100vh - 65px);
+  }
+  grid-template-rows: 100vh;
+}
+
+// @media screen and (max-width: $deskTopViewWidth) {
+//   .baseLayoutContainer {
+//     display: initial;
+//   }}
+  
+//   @media screen and (max-width: $deskTopViewWidth) {
+//     .baseLayoutContainer {
+//         display: initial;
+//     }
+//     .headerMain {
+//       height: 65px;
+//     }
+//     .footer {
+//       height: 40px !important;
+//     }
+//   }

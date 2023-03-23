@@ -1,0 +1,132 @@
+@import "../../assets/scss/breakpoints.scss";
+
+.mainPageLayout {
+  position: relative;
+  .fullScreenIcon {
+    border-radius: 50%;
+    cursor: pointer;
+    height: 2.8em;
+    padding: 0.2em;
+    position: absolute;
+    right: 10px;
+    top: 0.5em;
+    width: 2.8em;
+    z-index: 9;
+    button{
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      &.imgBgColor{
+        height: 2.3em;
+        width: 2.3em;
+        border-radius: 50%;
+        background-color: var(--primaryColor);
+        picture{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+  .container {
+    display: flex;
+    height: 100%;
+      
+      .map {
+        width: 75%;
+        transition: width 0.1s;
+        position: relative;
+        @media only screen and (max-width: $deskTopViewWidth) {
+          width: 70%;
+          .dashboardHeader{
+            width: 70%;
+          }
+        }
+      }
+      .sidebar {
+        width: 25%;
+        transition: width 0.1s;
+        @media only screen and (max-width: $deskTopViewWidth) {
+          width: 30%;
+        }
+        @media screen and (max-width: $mobileViewWidth) {
+          width: 0;
+        }
+      }
+      .dashboardHeader{
+        position: absolute;
+        z-index: 9;
+        width: 75%;
+        @media only screen and (max-width: $deskTopViewWidth) {
+          width: 70%;
+        }
+        .dashboardHeaderWrap{
+          position: relative;
+          width: 100%;
+          .searchIcon{
+            position: absolute;
+            top: 0.5em;
+            left: 0.8em;
+            padding: 0.2em;
+            z-index: 2;
+          }
+        }
+      }
+    &.containerFullScreen {
+        .map{
+          width: 100%;
+          transition: width 0.1s;
+        }
+        .sidebar {
+          width: 0;
+          transition: width 0.1s;
+        }
+        .dashboardHeader{
+          width: 100%;
+         
+        }
+    }
+    @media screen and (max-width: $tabletViewWidth) {
+          .map {
+            width: 100%;
+            transition: width 0.1s;
+          }
+          .sidebar {
+            width: 0;
+            transition: width 0.1s;
+          }
+          .dashboardHeader{
+            width: 100%;
+            .searchIcon{
+              top: 0.3em !important;
+              .searchBtn{
+                width: 2.5em;
+                height: 2.5em;
+              }
+            }
+           
+          }
+        &.containerFullScreen {
+          .ArrowRight{
+            transform:none;
+          }
+            .map{
+              width: 0;
+              transition: width 0.1s;
+            }
+            .sidebar {
+              width: 100%;
+              transition: width 0.1s;
+              opacity: 1 !important;
+            }
+        }
+    }
+   
+  }
+}
