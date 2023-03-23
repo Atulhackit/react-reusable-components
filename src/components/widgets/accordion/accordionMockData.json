@@ -1,0 +1,17 @@
+[
+    {
+        "id":0,
+        "label":"Head one",
+        "content":"The accordion component allows the user to show and hide sections of related content on a page."
+    },
+    {
+        "id":1,
+        "label":"Head Two",
+        "content":"The accordion component allows the user to show and hide sections of related content on a page."
+    },
+    {
+        "id":2,
+        "label":"Head Three",
+        "content":"The accordion component allows the user to show and hide sections of related content on a page."
+    }
+]

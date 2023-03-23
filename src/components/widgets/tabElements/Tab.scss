@@ -1,0 +1,87 @@
+@mixin comonItem {
+  font-size: 1em;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--tabColor);
+  cursor: pointer;
+  list-style: none;
+}
+
+.tabsWrapper {
+  display: flex;
+  padding: 1em;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  gap: 2em;
+  &.Style-1 {
+    padding: 0;
+    background-color: var(--tabBackgroundColor);
+    gap: 0;
+    height: 100%;
+    .item {
+      @include comonItem;
+      padding: 1em;
+      border-right: 1px solid;
+      text-align: center;
+      text-transform: capitalize;
+      height: 100%;
+      &:hover {
+        background-color: var(--tabActiveColor);
+        color: var(--tabColor);
+        font-weight: 500;
+      }
+    }
+    .active {
+      height: 100%;
+      color: var(--tabColor);
+      background-color: var(--tabActiveColor);
+      color: var(--tabColor);
+      font-weight: 500;
+    }
+  }
+  //   Style 2
+  &.Style-2 {
+    background-color: var(--tabBackgroundColor);
+    height: 100%;
+    .item {
+      height: 100%;
+      @include comonItem;
+    }
+    .active {
+      height: 100%;
+      color: var(--tabActiveColor);
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: var(--tabActiveColor);
+        height: 4px;
+        width: 100%;
+        bottom: -8px;
+        left: 0;
+        text-align: center;
+        border-radius: 2px 2px 0 0;
+      }
+    }
+  }
+  &.Style-3 {
+    background-color: var(--tabBackgroundColor);
+    .item {
+      @include comonItem;
+      padding: 0.5em;
+      &:hover {
+        color: var(--tabColor);
+        position: relative;
+        background-color: var(--tabActiveColor);
+        padding: 0.5em;
+        border-radius: 2px;
+      }
+    }
+    .active {
+      color: var(--tabColor);
+      position: relative;
+      background-color: var(--tabActiveColor);
+      padding: 0.5em;
+      border-radius: 2px;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+@import "../../../assets/scss/mixin.scss";
+
+.buttonWrapper ,.iconButton{
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.8em 2.5em;
+  vertical-align: middle;
+  @include flex-center;
+  border-radius:6px ;
+  margin: 10px 0;
+  gap: 1em;
+  &.primary {
+    border: 1px solid var(--primaryButtonBorderColor);
+    background-color: var(--primaryButtonBackgroundColor);
+    color: var(--primaryButtonTextColor);
+
+    &:hover {
+      border: 1px solid var(--primaryButtonBorderColorHover);
+      background-color: var(--primaryButtonBackgroundColorHover);
+      color: var(--primaryButtonTextColorHover);
+    }
+  }
+
+  &.secondary {
+    border: 1px solid var(--secondaryButtonBorderColor);
+    background-color: var(--secondaryButtonBackgroundColor);
+    color: var(--secondaryButtonTextColor);
+
+    &:hover {
+      border: 1px solid var(--secondaryButtonBorderColorHover);
+      background-color: var(--secondaryButtonBackgroundColorHover);
+      color: var(--secondaryButtonTextColorHover);
+    }
+  }
+
+  &.teritary{
+    border: none;
+    background-color: transparent;
+    color: var(--teritaryButtonTextColor);
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  &.disabled{
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  >img{
+    height:2.5em;
+  }
+  &.Style-2 {
+    border-radius: 2em;
+    &.iconButton{
+      padding: .4em 1.5em;
+    }
+  }
+  &.Style-3 {
+    border-radius: 0px;
+    &.iconButton{
+      padding: 0;
+      background: none !important;
+      border: none !important;
+    }
+
+  }
+  &.iconButton{
+    padding: .4em 1.5em;
+    
+  }
+}
+

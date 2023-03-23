@@ -1,0 +1,172 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+
+  .errorMsg {
+    font-size: 0.8em;
+    color: var(--errorTextColor) !important;
+    margin-top: 5px;
+  }
+
+  // &.Style-1 {
+    .formControl {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      .formLabel {
+        text-transform: capitalize;
+        font-size: 1em;
+        text-align: left;
+        order: 1;
+        font-weight: 500;
+        color: var(--formElementsLabelColor);
+      }
+     #google_translate_element{
+      order: 2;
+      .goog-te-combo{
+        border-radius: 0;
+      }
+     }
+      input,
+      select {
+        order: 2;
+        font-size: 1em;
+        font-weight: 400;
+        padding: 0 0.5em;
+        min-height: 40px;
+        border: 1px solid var(--formElementsBorderColor);
+        color: var(--formElementsTextColor);
+        background: var(--formElementsBgColor);
+        transition: all 0.3s ease;
+        margin-top: 0.5em;
+
+        &.errorInput {
+          border: 1px solid var(--errorTextColor);
+
+          &::placeholder {
+            color: var(--errorTextColor);
+          }
+
+          &:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: var(--errorTextColor);
+          }
+
+          &::-ms-input-placeholder {
+            /* Microsoft Edge */
+            color: var(--errorTextColor);
+          }
+        }
+      }
+    }
+
+    .passwordIcon {
+      z-index: 1;
+      position: absolute;
+      right: 0.5em;
+      bottom: 8%;
+
+      svg {
+        fill: var(--formElementsTextColor);
+      }
+    }
+  // }
+
+  &.Style-2 {
+    .formControl {
+      position: relative;
+      width: 100%;
+
+      .formLabel {
+        position: absolute;
+        font-family: inherit;
+        font-size: 1em;
+        font-weight: 400;
+        line-height: inherit;
+        left: 1em;
+        top: 0.9em;
+        padding: 0 0.25em;
+        color: var(--formElementsTextColor);
+        transition: all 0.3s ease;
+        pointer-events: none;
+        background: var(--formElementsBgColor);
+      }
+    }
+
+    .formInput,
+    .formSelect {
+      font-size: 1em;
+      font-weight: 400;
+      width: 100%;
+      height: auto;
+      min-height: 40px;
+      padding: 0.75em 1.25em;
+      border: 1px solid var(--formElementsBorderColor);
+      color: var(--formElementsTextColor);
+      background: var(--formElementsBgColor);
+      transition: all 0.2s ease-in-out;
+      border-radius: 6px;
+
+      &::placeholder {
+        opacity: 0;
+        visibility: hidden;
+        color: transparent;
+      }
+
+      &:focus,
+      &:not(:placeholder-shown),
+      &:valid.formSelect {
+        & ~ .formLabel {
+          top: -0.75em;
+          left: 1em;
+          z-index: 5;
+          transition: all 0.2s ease-in-out;
+          background: white;
+          position: absolute;
+          color: var(--formElementsLabelColor);
+        }
+      }
+
+      &:focus {
+        border: 1px solid var(--formElementsFocusBorderColor);
+        background: var(--formElementsFocusBgColor);
+        color: var(--formElementsFocusTextColor);
+
+        & ~ .formLabel {
+          color: var(--formElementsFocusLabelColor);
+        }
+      }
+
+      &.errorInput {
+        border: 1px solid var(--errorTextColor);
+
+        &::placeholder {
+          color: var(--errorTextColor);
+        }
+
+        &:-ms-input-placeholder {
+          /* Internet Explorer 10-11 */
+          color: var(--errorTextColor);
+        }
+
+        &::-ms-input-placeholder {
+          /* Microsoft Edge */
+          color: var(--errorTextColor);
+        }
+      }
+    }
+  }
+
+  .passwordIcon {
+    z-index: 1;
+    position: absolute;
+    right: 0.5em;
+    bottom: 15%;
+
+    svg {
+      fill: var(--formElementsTextColor);
+    }
+  }
+}

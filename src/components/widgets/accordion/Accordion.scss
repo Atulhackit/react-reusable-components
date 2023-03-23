@@ -1,0 +1,68 @@
+.accordionContainer {
+  width: 100%;
+  height: 100%;
+  .accordionMain {
+    width: 100%;
+    // margin-bottom: 0.5em;
+    .accordionLabel {
+      background-color: var(--accordionLabelBgColor);
+      display: flex;
+      justify-content: space-between;
+      padding: 1em;
+      transition: 0.5s ease-in-out;
+      > p ,span {
+        font-size: 1.1em;
+        font-weight: 500;
+        color: var(--accordionContentColor);
+        &.active {
+        }
+      }
+    }
+    .accordioncontent {
+      background-color: var(--accordionContentBgColor);
+      padding: 1em;
+      transition:.5s ease-in-out;
+
+      & > p {
+        font-size: 1em;
+        font-weight: 500;
+      }
+    }
+  }
+  &.Style-2{
+    .accordionMain {
+        margin-bottom: 0.5em;
+        .accordionLabel {
+          > p ,span {
+            &.active {
+            }
+          }
+        }
+      }
+  }
+  &.Style-3{
+    .accordionMain {
+        margin-bottom: 0.5em;
+        box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+        .accordionLabel {
+            background-color: var(--accordionLabelBgColor);
+          > p ,span {
+        }
+        &.active {
+            color: #fff;
+            background-color: var(--accordionBgColor);
+            
+        }
+        }
+        .accordioncontent {
+            background-color: var(--accordionBgColor);
+            padding: 1em;
+            transition:.5s ease-in-out;
+      
+            & > p {
+              color: #fff;;
+            }
+          }
+      }
+  }
+}

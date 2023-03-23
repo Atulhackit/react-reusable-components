@@ -1,0 +1,122 @@
+@import "../../../assets/scss/mixin.scss";
+@import "../../../assets/scss/breakpoints.scss";
+
+.tableContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+
+  .tableRow {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 45px;
+
+    .text {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      height: 100%;
+      color: var(--tableColor);
+      font-size: 1em;
+      padding: 0.9em;
+      font-weight: 600;
+      min-width: 90px;
+      word-break: break-word;
+      position: relative;
+      // @media screen and (max-width: $mobileViewWidth) {
+      //   min-width: 50%;
+      // }
+      @media screen and (max-width: $midTabledViewWidth) {
+        min-width: 33%;
+      }
+      .buttonWrapper > img,
+      .iconButton {
+        display: flex;
+        align-items: center;
+        > img {
+          height: 1em;
+        }
+      }
+    }
+  }
+
+  .tableHeader {
+    // height: 60px;
+    background: var(--tableHeaderBg);
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    .text {
+      word-break: break-word;
+      cursor: pointer;
+      background: var(--tableHeaderBg);
+    }
+  }
+  .tableBody {
+    width: 100%;
+    height: 100%;
+    .noData {
+      font-size: 0.9em;
+      margin-top: 1em;
+      @include flex-center;
+      border: 1px solid;
+      border-radius: 5px;
+      padding: 10px;
+      font-weight: 400;
+      color: var(--tableColor);
+    }
+    .tableBodyContainer {
+      width: 100%;
+      align-items: center;
+      &:nth-child(even) {
+        .text {
+          background-color: var(--tableNthChildBg);
+        }
+      }
+      &:nth-child(odd) {
+        .text {
+          background: var(--tableBodyBg);
+        }
+      }
+      .text {
+        color: var(--tableBodyColor);
+        font-weight: 600;
+        font-size: 0.9em;
+        text-align: left;
+        // &:first-child{
+        // //   text-transform: capitalize;
+        // }
+      }
+    }
+  }
+  &.Style-2 {
+    .tableHeader {
+      border-radius: 5px 5px 0 0;
+      background-color: var(--tableHeaderBg);
+    }
+    .tableBody {
+      .tableRow {
+        &:hover {
+          background-color: var(--tableHeaderBg);
+        }
+      }
+      .tableBodyContainer {
+        background-color: var(--tableBodyBg);
+        border-radius: 0;
+        &:nth-child(even) {
+          background-color: var(--tableBodyBg);
+        }
+        &:hover {
+          background-color: var(--tableRowHoverBg);
+        }
+        &:last-child {
+          border-radius: 0 0 5px 5px;
+        }
+      }
+    }
+  }
+}
